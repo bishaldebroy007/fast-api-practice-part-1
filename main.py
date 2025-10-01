@@ -22,11 +22,11 @@ def get_data():
     return data
 
 @app.post("/about")
-def add_tea(tea: Home_Class):
+def add_home(data: Home_Class):
     data.append(data)
-    return tea
+    return data
 @app.put("/about/{home_id}")
-def update_tea(home_id: int, updated_home: Home_Class):
+def update_home(home_id: int, updated_home: Home_Class):
     for index, home in enumerate(data):
         if home.id == home_id:
             data[index] = updated_home
@@ -34,7 +34,7 @@ def update_tea(home_id: int, updated_home: Home_Class):
     return {"error": "home not found"}
 
 @app.delete("/about/{home_id}")
-def delete_tea(home_id: int):
+def delete_home(home_id: int):
     for index, home in enumerate(data):
         if home.id == home_id:
             del data[index]
